@@ -1,11 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Dashboard from "./Pages/Dashboard";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Dashboard
+          username="Katja Novak"
+          location="Ljubljana, Slovenija"
+          activities={[
+            { id: 1, name: 'BH FITNESS RS900' },
+            { id: 2, name: 'MISSION JOGGER' },
+          ]}
+          rank={33}
+          connections={[
+            { id: 1, name: 'Apple TV' },
+          ]}
+      />
     </View>
   );
 }
