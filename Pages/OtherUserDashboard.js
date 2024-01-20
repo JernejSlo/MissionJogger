@@ -1,4 +1,4 @@
-import React, {useState} from 'react';import { View, Text, StyleSheet, FlatList } from 'react-native';
+import React, {useState} from 'react';import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import DashboardUser from "../Components/DashboardUser"
 import SwitchView from "../Components/SwitchView"
 import Activities from "../Components/Activities";
@@ -13,24 +13,23 @@ import {
     selectLeaderboard,
     selectConnections,
     selectPastConnections,
-    setActivities, setLeaderboard
+    setActivities, setLeaderboard, selectOtherUser
 } from "../Slices/navSlice";
 import AppLoading from "expo-app-loading";
 import Connections from "../Components/Connections";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import {useNavigation} from "@react-navigation/native";
 
 
 
-const Dashboard = () => {
+const OtherUserDashboard = () => {
 
-    const user_ = useSelector(selectUser);
-    const activities = useSelector(selectActivities);
-    const connections_ = useSelector(selectConnections);
-    const past_connections = useSelector(selectPastConnections);
-    const leaderboard_ = useSelector(selectLeaderboard);
+    const user_ = useSelector(selectOtherUser);
+
+    const navigator = useNavigation()
 
     const [user, setUser] = useState(user_)
-    const [connections, setConnections] = useState(connections_)
-    const [leaderboard, setLeaderboard] = useState(leaderboard_)
+    const [activities, setActivities] = useState(user.activities)
 
     const [fontsLoaded,fontError] = useFonts({
         "Magra400Regular" : require("../assets/fonts/Magra-Regular.ttf"),
@@ -82,10 +81,6 @@ const Dashboard = () => {
     function renderComponent() {
         if (selected === 0) {
             return <Activities activities={activities} />;
-        } else if (selected === 1) {
-            return <Leaderboard leaderboard={leaderboard} />;
-        } else {
-            return <Connections connections={past_connections} />;
         }
     }
 
@@ -93,27 +88,39 @@ const Dashboard = () => {
         return <AppLoading></AppLoading>
     }
     else{
-    return (
-        <SafeAreaView style={styles.base_bg}>
-            <View style={styles.container}>
-                <View style={styles.textWrapper}>
-                    <Text style={[styles.leftText]}>
-                        Dashboard
+        return (
+            <SafeAreaView style={styles.base_bg}>
+                <View style={{
+                    flexDirection: "row",
+                    marginBottom: "8%",
+                }}>
+                    <TouchableOpacity style={{
+                        width: "10%"
+                    }}
+                                      onPress={()=>{navigator.goBack()}}
+                    >
+                        <Icon name="chevron-left" size={40} color="#000" />
+                    </TouchableOpacity>
+                    <Text  style={{
+                        alignSelf: "center",
+                        paddingBottom: 10,
+                        fontFamily: "Quicksand700Bold",
+                        fontSize: 28,
+                        width: "80%",
+                        marginRight: "10%",
+                        textAlign: "center",
+                        color: '#303E49',
+                    }}>
+                        {user.name}'s Profile
                     </Text>
                 </View>
-                <View style={styles.textWrapper}>
-                    <Text style={[styles.rightText]}>
-                        MISSION JOGGER
-                    </Text>
-                </View>
-            </View>
-            <DashboardUser user={user} activities={activities}/>
-            <SwitchView items={listId} func={(index) => setSelected(index)}/>
-            {
-                renderComponent()
-            }
-        </SafeAreaView>
-    );
+                <DashboardUser user={user} activities={activities}/>
+                <SwitchView items={listId} func={(index) => setSelected(index)}/>
+                {
+                    renderComponent()
+                }
+            </SafeAreaView>
+        );
 
     }
 };
@@ -168,4 +175,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Dashboard;
+export default OtherUserDashboard;
