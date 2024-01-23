@@ -43,7 +43,7 @@ const initialState = {
             added: true,
             title: "Mission save the President",
             description: "Enjoy this hour long dynamic mission full of running and sneaking!",
-            img: require('../assets/missions/Sportsicon.png'),
+            img: require('../assets/missions/IStopwatch.png'),
             time: 1,
             values: [
                 {
