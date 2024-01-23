@@ -119,7 +119,7 @@ export default function CoursePage( ){
                     height: "40%",
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
-                }} source={require("../assets/ufhBG.png")}/>
+                }} source={require("../assets/trails/ufhBG.png")}/>
                 <Text style={{
                     margin: 20,
                     fontFamily: "Quicksand700Bold",

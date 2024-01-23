@@ -17,7 +17,7 @@ const initialState = {
             added: true,
             title: "Summer Beach Run Course",
             description: "Enjoy this scenic hour long beach running course made specially for you!",
-            img: require('../assets/summerbr.png'),
+            img: require('../assets/trails/summerbr.png'),
             time: 1,
             values: [
                 {
@@ -43,7 +43,7 @@ const initialState = {
             added: true,
             title: "Mission save the President",
             description: "Enjoy this hour long dynamic mission full of running and sneaking!",
-            img: require('../assets/Sportsicon.png'),
+            img: require('../assets/missions/Sportsicon.png'),
             time: 1,
             values: [
                 {
@@ -139,7 +139,7 @@ const initialState = {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/summerbr.png'),
+                    img: require('../assets/trails/summerbr.png'),
                     time: 1,
                     values: [
                         {
@@ -164,7 +164,7 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/uphillForestHike.png'),
+                    img: require('../assets/trails/uphillForestHike.png'),
                     time: 1,
                     values: [
                         {
@@ -220,7 +220,7 @@ const initialState = {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/summerbr.png'),
+                    img: require('../assets/trails/summerbr.png'),
                     time: 1,
                     values: [
                         {
@@ -245,7 +245,7 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/uphillForestHike.png'),
+                    img: require('../assets/trails/uphillForestHike.png'),
                     time: 1,
                     values: [
                         {
@@ -301,7 +301,7 @@ const initialState = {
                     id: 1,
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
-                    img: require('../assets/summerbr.png'),
+                    img: require('../assets/trails/summerbr.png'),
                     time: 1,
                     values: [
                         {
@@ -326,7 +326,7 @@ const initialState = {
                     id: 2,
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
-                    img: require('../assets/uphillForestHike.png'),
+                    img: require('../assets/trails/uphillForestHike.png'),
                     time: 1,
                     values: [
                         {
