@@ -11,7 +11,8 @@ export default function SwitchView({ items, func }){
     return (
         <View style={{
             width: "80%",
-            height: "5%",
+            maxHeight: "5%",
+            minHeight: 38,
             backgroundColor: "#c0c0c0",
             alignSelf: "center",
             marginTop: 20,

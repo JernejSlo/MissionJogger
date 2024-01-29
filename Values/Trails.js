@@ -29,7 +29,7 @@ const trails = [
         title: "Summer Beach Run Course",
         description: "Enjoy this scenic hour long beach running course made specially for you!",
         img: require('../assets/trails/summerbr.png'),
-        bg: require("../assets/trails/BGWinter.png"),
+        bg: require("../assets/trails/BGSummer.png"),
         time: 1,
         values: [
             {
@@ -73,32 +73,7 @@ const trails = [
                 "title": "Start",
                 "value": "lvl 1"
             }]},
-
         {
-            id: 4,
-            title: "Alien Planet Run",
-            description: "You find yourself on an alien planet full of strange creatures and scenic views. An alien creature has stolen the key to your ship. Catch it so you can get home!",
-            img: require('../assets/trails/rocket.png'),
-            bg: require("../assets/trails/BGAlien.png"),
-            time: 1,
-            values: [
-                {
-                    "title": "Calories/h",
-                    "value": "800/h+"
-                },
-                {
-                    "title": "Time",
-                    "value": "1.5h"
-                },
-                {
-                    "title": "Downloads",
-                    "value": "790"
-                },
-                {
-                    "title": "Start",
-                    "value": "lvl 3"
-                }]
-        },{
         id: 5,
         title: "Beachside Bliss Walk",
         description: "A scenic tropical trail along the beach, surrounded by palm trees and the gentle sound of ocean waves.",

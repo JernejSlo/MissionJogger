@@ -18,6 +18,7 @@ const initialState = {
             title: "Summer Beach Run Course",
             description: "Enjoy this scenic hour long beach running course made specially for you!",
             img: require('../assets/trails/summerbr.png'),
+            bg: require('../assets/trails/BGSummer.png'),
             time: 1,
             values: [
                 {
@@ -44,6 +45,7 @@ const initialState = {
             title: "Mission save the President",
             description: "Enjoy this hour long dynamic mission full of running and sneaking!",
             img: require('../assets/missions/IStopwatch.png'),
+            bg: require('../assets/missions/BGSaveThePresident.png'),
             time: 1,
             values: [
                 {
@@ -68,6 +70,7 @@ const initialState = {
             title: "HIIT explosive workout",
             description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
             img: require('../assets/Sportsicon(1).png'),
+            bg: require('../assets/trainings/BG1.png'),
             time: 1,
             values: [
                 {
@@ -140,6 +143,7 @@ const initialState = {
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
                     img: require('../assets/trails/summerbr.png'),
+                    bg: require('../assets/trails/BGSummer.png'),
                     time: 1,
                     values: [
                         {
@@ -165,6 +169,7 @@ const initialState = {
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
                     img: require('../assets/trails/uphillForestHike.png'),
+                    bg: require('../assets/trails/ufhBG.png'),
                     time: 1,
                     values: [
                         {
@@ -189,6 +194,7 @@ const initialState = {
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
                     img: require('../assets/Sportsicon(1).png'),
+                    bg: require('../assets/trainings/BG1.png'),
                     time: 1,
                     values: [
                         {
@@ -221,6 +227,7 @@ const initialState = {
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
                     img: require('../assets/trails/summerbr.png'),
+                    bg: require('../assets/trails/BGSummer.png'),
                     time: 1,
                     values: [
                         {
@@ -246,6 +253,7 @@ const initialState = {
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
                     img: require('../assets/trails/uphillForestHike.png'),
+                    bg: require('../assets/trails/ufhBG.png'),
                     time: 1,
                     values: [
                         {
@@ -270,6 +278,7 @@ const initialState = {
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
                     img: require('../assets/Sportsicon(1).png'),
+                    bg: require('../assets/trainings/BG1.png'),
                     time: 1,
                     values: [
                         {
@@ -302,6 +311,7 @@ const initialState = {
                     title: "Summer Beach Run Course",
                     description: "Enjoy this scenic hour long beach running course made specially for you!",
                     img: require('../assets/trails/summerbr.png'),
+                    bg: require('../assets/trails/BGSummer.png'),
                     time: 1,
                     values: [
                         {
@@ -327,6 +337,7 @@ const initialState = {
                     title: "Uphill Forest Hike Course",
                     description: "Classic end of the week hike, a variety of medium inclines on a path through a forest.",
                     img: require('../assets/trails/uphillForestHike.png'),
+                    bg: require('../assets/trails/ufhBG.png'),
                     time: 1,
                     values: [
                         {
@@ -351,6 +362,7 @@ const initialState = {
                     title: "HIIT explosive workout",
                     description: "45 minute long hiit session to prepare you for the dynamics of any explosive sport!",
                     img: require('../assets/Sportsicon(1).png'),
+                    bg: require('../assets/trainings/BG1.png'),
                     time: 1,
                     values: [
                         {

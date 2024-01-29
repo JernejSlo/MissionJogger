@@ -9,19 +9,31 @@ import missions from "../Values/missions";
 import trails from "../Values/Trails";
 import SearchBar from "../Components/SearchBar";
 import {useNavigation} from "@react-navigation/native";
+import training from "../Values/Training";
 
 export default function Browse(){
 
     const [listId, setListId] = useState([{id: 0,name: "Trails"},{id: 1,name: "Missions"},{id: 2,name: "Training"}])
     const [selected,setSelected] = useState(0)
 
-    const [trails_,setTrails_] = useState(trails)
-    const [missions_,setMissions_] = useState(missions)
-    const [trainings_,setTrainings_] = useState([])
+    const [trails_,setTrails_] = useState(sortByPopularity(trails).slice(0,4))
+    const [missions_,setMissions_] = useState(sortByPopularity(missions))
+    const [trainings_,setTrainings_] = useState(sortByPopularity(training))
 
     const [search_,setSearch_] = useState("")
 
+    function sortByPopularity(list) {
+        // Use the Array.sort method to sort the list by the 'downloads' value
+        list.sort((item1, item2) => {
+            const downloads1 = parseInt(item1.values.find(value => value.title === "Downloads").value);
+            const downloads2 = parseInt(item2.values.find(value => value.title === "Downloads").value);
 
+            // Sort in descending order (higher downloads first)
+            return downloads2 - downloads1;
+        });
+
+        return list;
+    }
 
     function renderComponent() {
         if (selected === 0) {
@@ -29,15 +41,29 @@ export default function Browse(){
         } else if (selected === 1) {
             return <Activities activities={missions_} />;
         } else {
-            return <Activities activities={[]} />;
+            return <Activities activities={trainings_} />;
         }
     }
 
 
 
     function filterAll(text){
-        setTrails_(searchItems(text,trails))
-        setMissions_(searchItems(text,missions))
+        console.log(text)
+        if (text.toLowerCase() == "all" || text == "*"){
+            setTrails_(sortByPopularity(searchItems("",trails)))
+            setMissions_(sortByPopularity(searchItems("",missions)))
+            setTrainings_(sortByPopularity(searchItems("",training)))
+        }else if (text != "") {
+            setTrails_(sortByPopularity(searchItems(text, trails)))
+            setMissions_(sortByPopularity(searchItems(text, missions)))
+            setTrainings_(sortByPopularity(searchItems(text, training)))
+        }
+        else{
+            setTrails_(sortByPopularity(searchItems(text,trails)).slice(0,4))
+            setMissions_(sortByPopularity(searchItems(text,missions)).slice(0,2))
+            setTrainings_(sortByPopularity(searchItems(text,training)).slice(0,2))
+        }
+
 
     }
 
@@ -90,7 +116,7 @@ export default function Browse(){
             <View style={{
                 alignSelf: "center",
                 width: "100%",
-                height: "100%",
+                height: "90%",
                 alignItems: "center"
             }}>
 
@@ -107,7 +133,17 @@ export default function Browse(){
                 </Text>
                     : <></>}
                 <SwitchView items={listId} func={(index) => setSelected(index)}/>
+
                 {renderComponent()}
+                {search_ != "" ? <View><Text style={{
+                    alignSelf: "center",
+                    paddingTop: 10,
+                    fontFamily: "Quicksand700Bold",
+                    fontSize: 14,
+                    color: 'rgba(0, 0, 0, 0.9)',
+                }}>
+                    Search 'all' to see all courses!
+                </Text></View> : <></>}
             </View>
         </SafeAreaView>
     )
